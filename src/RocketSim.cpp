@@ -22,6 +22,13 @@ const SuspensionCollisionGrid& RocketSim::GetDefaultSuspColGrid() {
 }
 #endif
 
+// This is easier than trying to manually bind std::filesystem::path because the
+// script doesn't like it for some reason
+void RocketSim::StringInit(const char* collisionMeshesFolder) {
+	std::filesystem::path path = std::filesystem::path(collisionMeshesFolder);
+	RocketSim::Init(path);
+}
+
 void RocketSim::Init(std::filesystem::path collisionMeshesFolder) {
 
 	constexpr char MSG_PREFIX[] = "RocketSim::Init(): ";

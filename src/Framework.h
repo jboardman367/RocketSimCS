@@ -70,7 +70,8 @@ typedef uint8_t byte;
 
 #define RS_ERR_CLOSE(s) { RS_LOG("FATAL ERROR: " << s); exit(EXIT_FAILURE); }
 
-#if 0 // FOR FUTURE USE: Exports/imports setup
+#if 1 // FOR FUTURE USE: Exports/imports setup
+#define ROCKETSIM_EXPORTS
 #ifdef ROCKETSIM_EXPORTS
 #define RSAPI __declspec(dllexport)
 #else

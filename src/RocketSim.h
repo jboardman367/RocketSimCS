@@ -19,10 +19,11 @@ enum class RocketSimStage : byte {
 
 namespace RocketSim {
 
+	RSAPI void StringInit(const char* collisionMeshesFolder);
 	void Init(std::filesystem::path collisionMeshesFolder);
 	void AssertInitialized(const char* errorMsgPrefix);
 
-	RocketSimStage GetStage();
+	RSAPI RocketSimStage GetStage();
 
 	const vector<btBvhTriangleMeshShape*>& GetArenaCollisionShapes();
 
